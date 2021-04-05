@@ -1,6 +1,6 @@
 @Library("shared-library") _
 node {  
      stage('Stage 1') {
-         hello()
+         helloworld()
   }
 }
