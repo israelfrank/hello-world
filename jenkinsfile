@@ -1,7 +1,7 @@
 @Library("shared-library") _
 pipeline {
    agent any
-      tages {
+      stages {
          stage('stage') {
             steps {
               helloworld()
