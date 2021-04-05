@@ -2,10 +2,16 @@
 pipeline {
    agent any
       stages {
-         stage('stage') {
+         stage('stage 1') {
             steps {
               helloworld()
             }
+          }
+          stage('stage 2') {
+            steps{
+                zip zipFile: 'test.zip', archive: false, dir: 'archive'
+                archiveArtifacts artifacts: 'test.zip', fingerprint: true
+            }     
           }    
       }
 }
