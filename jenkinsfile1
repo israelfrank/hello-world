@@ -12,7 +12,8 @@ pipeline {
                 configFileProvider([configFile(fileId:'c16b3bcf-f157-4d5a-8398-e238157d41ee',variable:'CONFIG_FILE')]){
                   sh 'echo $israel' 
                 // s3Upload(file:'helloworld.zip', bucket:'jenknis-artifact', path:'./hello-world/helloworld.html') 
-            }     
+                }   
           }    
       }
+    }
 }
