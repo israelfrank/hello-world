@@ -14,8 +14,8 @@ pipeline {
             }    
              script{
                 sh 'zip -r hello.zip *'    
-               sh 'ls && pwd'
-                //  archiveArtifacts artifacts: 'github-hello_world.tar.gz', onlyIfSuccessful: true 
+                 sh 'ls && pwd'
+                 archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true 
                 }   
              }
       }
