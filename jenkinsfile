@@ -5,6 +5,5 @@ node {
    }
     stage('stage 2') {
       zip archive: true, dir: 'helloworld.html', glob: '', zipFile: 'hello.zip'
-      archiveArtifacts artifacts: 'hello.zip', fingerprint: true
     }
 }
