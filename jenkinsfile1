@@ -16,9 +16,9 @@ pipeline {
                 sh 'zip -r hello.zip *'    
                  sh 'ls && pwd'
                  archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true
-                //    withAWS(region:'eu-central-1', credentials:'awscredentialsID'){
-                //  hjhkj  s3Upload(bucket:'jenknis-artifact', workingDir:'', includePathPattern:'hello.zip'); 
-                // }
+                    withAWS(region:'eu-central-1', credentials:'762265618681'){
+                    s3Upload(bucket:'jenknis-artifact', workingDir:'', includePathPattern:'hello.zip'); 
+                }
                 }   
             }
       }
