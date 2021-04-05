@@ -13,7 +13,9 @@ pipeline {
                  sh 'cat ${CONFIG_FILE}' 
             }    
              script{
-                zip archive: true, dir: 'archive', glob: '', zipFile: 'hello.zip'                }   
+                zip archive: true, dir: 'archive', glob: '', zipFile: 'hello.zip'
+                archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true 
+                }   
              }
       }
     }
