@@ -1,6 +1,11 @@
 @Library("shared-library") _
-node {  
-     stage('Stage 1') {
-         helloworld()
-  }
+pipeline {
+   agent any
+      tages {
+         stage('stage') {
+            steps {
+              helloworld()
+            }
+          }    
+      }
 }
