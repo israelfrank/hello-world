@@ -16,8 +16,8 @@ pipeline {
                 sh 'zip -r hello.zip *'    
                  sh 'ls && pwd'
                  archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true
-                s3Upload(bucket:"jenknis-artifact", workingDir:'github-hello_world', includePathPattern:'hello.zip');
- 
+                // s3Upload(bucket:"jenknis-artifact", workingDir:'github-hello_world', includePathPattern:'hello.zip');
+                s3Upload acl: 'Private', bucket: 'jenknis-artifact', cacheControl: '', excludePathPattern: '', file: 'hello.zip', includePathPattern: '', metadatas: [''], redirectLocation: '', sseAlgorithm: '', tags: '', text: '', workingDir: ''
                 }   
              }
       }
