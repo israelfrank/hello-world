@@ -9,7 +9,7 @@ pipeline {
           }
           stage('stage 2') {
             steps{
-                zip zipFile: 'hello.zip', glob: 'helloworld.html'
+                zip archive: true, dir: 'helloworld.html', glob: '', zipFile: 'hello.zip'
                 archiveArtifacts artifacts: 'hello.zip', fingerprint: true
             }     
           }    
