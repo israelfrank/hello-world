@@ -10,10 +10,11 @@ pipeline {
           stage('stage 2') {
             steps{
                 configFileProvider([configFile(fileId:'c16b3bcf-f157-4d5a-8398-e238157d41ee',variable:'CONFIG_FILE')]){
-                 sh 'cat ${CONFIG_FILE}'
-                // s3Upload(file:'helloworld.zip', bucket:'jenknis-artifact', path:'./hello-world/helloworld.html') 
-                }   
-          }    
+                 sh 'cat ${CONFIG_FILE}' 
+            }    
+             script{
+                zip archive: true, dir: 'archive', glob: '', zipFile: 'hello.zip'                }   
+             }
       }
     }
 }
