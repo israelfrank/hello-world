@@ -17,7 +17,8 @@ pipeline {
                  sh 'ls && pwd'
                  archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true
                 // s3Upload(bucket:"jenknis-artifact", workingDir:'github-hello_world', includePathPattern:'hello.zip');
-               sh 'aws s3 cp target/ s3://jenknis-artifact/ --include "hello.zip"'
+                   s3Upload(bucket:'jenknis-artifact', workingDir:'target', includePathPattern:'hello.zip'); // pick your jar or whatever you need
+ 
 
                 }   
              }
