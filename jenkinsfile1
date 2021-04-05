@@ -17,7 +17,7 @@ pipeline {
                  sh 'ls && pwd'
                  archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true
                 //    withAWS(region:'eu-central-1', credentials:'awscredentialsID'){
-                //    s3Upload(bucket:'jenknis-artifact', workingDir:'', includePathPattern:'hello.zip'); 
+                //  hjhkj  s3Upload(bucket:'jenknis-artifact', workingDir:'', includePathPattern:'hello.zip'); 
                 // }
                 }   
             }
