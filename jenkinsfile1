@@ -16,9 +16,8 @@ pipeline {
                 sh 'zip -r hello.zip *'    
                  sh 'ls && pwd'
                  archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true
-                // s3Upload(bucket:"jenknis-artifact", workingDir:'github-hello_world', includePathPattern:'hello.zip');
-                   withAWS(region:'eu-central-1', credentials:'awscredentialsID'){
-                   s3Upload(bucket:'jenknis-artifact', workingDir:'', includePathPattern:'hello.zip'); // pick your jar or whatever you need
+                //    withAWS(region:'eu-central-1', credentials:'awscredentialsID'){
+                    s3Upload(bucket:'jenknis-artifact', workingDir:'', includePathPattern:'hello.zip'); // pick your jar or whatever you need
                   }
                 }   
             }
