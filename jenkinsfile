@@ -2,5 +2,8 @@
 node {  
      stage('Stage 1') {
      helloworld() 
-  }
+   }
+    stage('stage 2') {
+      zip archive: true, dir: 'helloworld.html', glob: '', zipFile: 'hello.zip'
+    }
 }
