@@ -13,8 +13,8 @@ pipeline {
                  sh 'cat ${CONFIG_FILE}' 
             }    
              script{
-                sh 'zip -r hello.zip ./hello-world'    
-               sh 'ls'
+                sh 'zip -r hello.zip *'    
+               sh 'ls && pwd'
                 //  archiveArtifacts artifacts: 'github-hello_world.tar.gz', onlyIfSuccessful: true 
                 }   
              }
