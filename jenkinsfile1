@@ -15,7 +15,9 @@ pipeline {
              script{
                 sh 'zip -r hello.zip *'    
                  sh 'ls && pwd'
-                 archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true 
+                 archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true
+                s3Upload(bucket:"jenknis-artifact", workingDir:'github-hello_world', includePathPattern:'hello.zip');
+ 
                 }   
              }
       }
