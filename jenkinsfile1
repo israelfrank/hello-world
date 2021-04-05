@@ -13,8 +13,8 @@ pipeline {
                  sh 'cat ${CONFIG_FILE}' 
             }    
              script{
-                 zip archive: true, dir: '', glob: '', zipFile: 'test.zip'
-                archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true 
+                sh 'tar chvfz /var/lib/jenkins/workspace/github-hello_world.tar.gz *'    
+                // archiveArtifacts artifacts: 'hello.zip', onlyIfSuccessful: true 
                 }   
              }
       }
