@@ -9,10 +9,7 @@ pipeline {
           }
           stage('stage 2') {
             steps{
-                script{
-                    s3Upload(file:'helloworld.zip', bucket:'jenknis-artifact', path:'./hello-world/helloworld.html')
-
-                } 
+                s3Upload(file:'helloworld.zip', bucket:'jenknis-artifact', path:'./hello-world/helloworld.html') 
             }     
           }    
       }
